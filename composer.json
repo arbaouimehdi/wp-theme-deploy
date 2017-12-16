@@ -1,0 +1,75 @@
+{
+  "name": "anttiviljami/wordpress-project",
+  "description": "WordPress project template for Heroku and local Docker",
+  "type": "project",
+  "license": "GPLv3",
+  "authors": [
+    {
+      "name": "Viljami Kuosmanen",
+      "email": "viljami@avoinsorsa.fi"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "php": ">=7.0",
+    "ext-gd": "*",
+    "ext-redis": "*",
+    "ext-mbstring": "*",
+    "johnpbloch/wordpress": "*",
+    "vlucas/phpdotenv": "^2.0.1",
+    "oscarotero/env": "^1.0",
+    "wp-cli/wp-cli" : "*",
+    "koodimonni/composer-dropin-installer": "*",
+    "koodimonni-language/fi": "*",
+    "wpackagist-theme/twentyseventeen": "*",
+    "humanmade/s3-uploads": "*",
+
+
+    "composer/installers": "~1.0",
+    "illuminate/support": "~5.4",
+    "roots/sage-lib": "~9.0.0-beta.4",
+    "soberwp/controller": "~9.0.0-beta.4"
+  },
+  "require-dev": {
+    "heroku/heroku-buildpack-php": "*",
+    "squizlabs/php_codesniffer": "^2.8.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "htdocs/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "htdocs/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "htdocs/wp-content/themes/{$name}": ["type:wordpress-theme"]
+    },
+    "dropin-paths": {
+      "htdocs/wp-content/languages/": ["vendor:koodimonni-language"],
+      "htdocs/wp-content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "htdocs/wp-content/languages/themes/": ["vendor:koodimonni-theme-language"]
+    },
+    "wordpress-install-dir": "htdocs/wordpress"
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "test -f /app/.heroku/mysql-client-core.deb || wget http://security.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-client-core-5.7_5.7.20-0ubuntu0.16.04.1_amd64.deb -qO /app/.heroku/mysql-client-core.deb",
+      "test -f /app/.heroku/mysql-core.deb || wget http://security.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-client-5.7_5.7.20-0ubuntu0.16.04.1_amd64.deb -qO /app/.heroku/mysql-client.deb",
+      "dpkg -x /app/.heroku/mysql-client.deb /app/.heroku/mysql; dpkg -x /app/.heroku/mysql-client-core.deb /app/.heroku/mysql",
+      "chmod +x /app/.heroku/mysql/usr/bin/* && mv /app/.heroku/mysql/usr/bin/* /app/.heroku/php/bin/"
+    ],
+    "post-install-cmd": [
+      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content\""
+    ]
+  }
+}
