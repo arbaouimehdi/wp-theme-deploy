@@ -20,7 +20,7 @@ services:
       - mysql
       - redis
     environment:
-      - VIRTUAL_HOST=spimarexpo.test
+      - VIRTUAL_HOST=example.test
 
   shell:
     build:
@@ -49,7 +49,7 @@ services:
       - '3306:3306'
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: spimarexpo
+      MYSQL_DATABASE: example
       MYSQL_USER: h4x0r
       MYSQL_PASSWORD: root
     restart: always
