@@ -1,12 +1,12 @@
 {
-  "name": "anttiviljami/wordpress-project",
+  "name": "freemh/wp-theme-deploy",
   "description": "WordPress project template for Heroku and local Docker",
   "type": "project",
   "license": "GPLv3",
   "authors": [
     {
-      "name": "Viljami Kuosmanen",
-      "email": "viljami@avoinsorsa.fi"
+      "name": "Arbaoui Mehdi",
+      "email": "arbaoui.mehdi@gmail.com"
     }
   ],
   "repositories": [
@@ -19,34 +19,22 @@
       "url": "https://wp-languages.github.io"
     }
   ],
-  "autoload": {
-    "psr-4": {
-      "App\\": "app/"
-    }
-  },
   "require": {
     "php": ">=7.0",
     "ext-gd": "*",
     "ext-redis": "*",
-    "ext-mbstring": "*",
     "johnpbloch/wordpress": "*",
+    "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
     "oscarotero/env": "^1.0",
     "wp-cli/wp-cli" : "*",
     "koodimonni/composer-dropin-installer": "*",
     "koodimonni-language/fi": "*",
     "wpackagist-theme/twentyseventeen": "*",
-    "humanmade/s3-uploads": "*",
-
-
-    "composer/installers": "~1.0",
-    "illuminate/support": "~5.4",
-    "roots/sage-lib": "~9.0.0-beta.4",
-    "soberwp/controller": "~9.0.0-beta.4"
+    "humanmade/s3-uploads": "*"
   },
   "require-dev": {
-    "heroku/heroku-buildpack-php": "*",
-    "squizlabs/php_codesniffer": "^2.8.0"
+    "heroku/heroku-buildpack-php": "*"
   },
   "extra": {
     "installer-paths": {
