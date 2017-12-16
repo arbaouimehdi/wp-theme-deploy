@@ -1,25 +1,60 @@
 variable "project_name" {}
-variable "aws_region" {
-  default = "eu-west-1"
-}
+variable "aws_region" { default = "eu-west-1" }
 
 # AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
-provider "aws" {
-  region = "${var.aws_region}"
-}
+provider "aws" { region = "${var.aws_region}" }
 
 # HEROKU_API_KEY, HEROKU_EMAIL
-provider "heroku" {
-
-}
+provider "heroku" {}
 
 # Store Terraform state in S3 (this must be prepared in advance)
 terraform {
   backend "s3" {
-    bucket = "wp-base-upload"
+    bucket = "dailycomfort"
     key = "wp/terraform.tfstate"
     region = "eu-west-1"
   }
+}
+
+# AWS security group for public database access
+resource "aws_security_group" "default" {
+  name = "rds0"
+  description = "public RDS security group"
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# Random password for database
+resource "random_id" "dev" {
+  keepers = {
+    project_name = "${var.project_name}"
+  }
+  byte_length = 16
+}
+
+# RDS MariaDB instance
+resource "aws_db_instance" "dev" {
+  engine = "mariadb"
+  identifier = "${var.project_name}-dev"
+  allocated_storage = 5
+  engine_version = "10.1.23"
+  instance_class = "db.t2.micro"
+  name = "wordpress"
+  username = "wordpress"
+  password = "${random_id.dev.hex}"
+  publicly_accessible = true
+  vpc_security_group_ids = ["${aws_security_group.default.id}"]
+  final_snapshot_identifier = "${var.project_name}-dev"
 }
 
 # IAM user for S3 bucket
@@ -73,6 +108,7 @@ resource "heroku_app" "dev" {
   ]
   config_vars {
     WP_ENV = "dev"
+    DATABASE_URL = "mysql://wordpress:${random_id.dev.hex}@${aws_db_instance.dev.address}/wordpress"
     S3_UPLOADS_BUCKET = "${aws_s3_bucket.dev.id}"
     S3_UPLOADS_KEY = "${aws_iam_access_key.dev.id}"
     S3_UPLOADS_SECRET = "${aws_iam_access_key.dev.secret}"
@@ -93,7 +129,4 @@ resource "heroku_addon" "papertrail-dev" {
 }
 
 # Outputs
-output "heroku git remote" {
-  value = "${heroku_app.dev.git_url}"
-}
-
+output "heroku git remote" { value = "${heroku_app.dev.git_url}" }
