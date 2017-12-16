@@ -152,10 +152,10 @@ vendor/*
 /docker/logs
 /node_modules/
 /docker/db-data/
-/htdocs/wp-content/themes/spimar-expo-theme/node_modules/
-/htdocs/wp-content/themes/spimar-expo-theme/vendor/
-/htdocs/wp-content/themes/spimar-expo-theme/.cache-loader/
-/htdocs/wp-content/themes/spimar-expo-theme/dist/
+/htdocs/wp-content/themes/base-theme/node_modules/
+/htdocs/wp-content/themes/base-theme/vendor/
+/htdocs/wp-content/themes/base-theme/.cache-loader/
+/htdocs/wp-content/themes/base-theme/dist/
 /htdocs/wp-content/uploads/
 /.cache-loader
 terraform.tfstate.backup
