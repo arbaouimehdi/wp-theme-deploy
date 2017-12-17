@@ -2,6 +2,6 @@
 
 ## Local Development
 
-- Install docker and docker-compose
-- Install node.js
+- Install `docker` and `docker-compose`
+- Install `node.js`
 
