@@ -18,7 +18,7 @@ terraform {
 
 # AWS security group for public database access
 resource "aws_security_group" "default" {
-  name = "rds0"
+  name = "default"
   description = "public RDS security group"
   ingress {
     from_port = 3306
