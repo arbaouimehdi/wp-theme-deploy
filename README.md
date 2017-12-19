@@ -11,7 +11,7 @@ git clone https://github.com/Clarkom/wp-theme-deploy.git
 
 Rename the project folder
 ```
-mv wp-theme-deploy project-name
+mv wp-theme-deploy projectname
 ```
 
 Run shell docker service
