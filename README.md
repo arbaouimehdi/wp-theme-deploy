@@ -1,6 +1,11 @@
 # Wordpress Theme Deploy
 
 
+## Local Dependencies
+
+Install **Docker**
+
+Install **Node.js**
 
 ## Local Development
 
@@ -76,7 +81,19 @@ Add a new S3 bucket with the name `projectname`
 
 ### Terraform
 
+Clone this repo and source set up your environment inside the project root.
+
+```
+cp .env.sample .env
+```
+I also recommend installing **autoenv**, so you don't have to run the source command all the time.
+
 Open `.env` and set `TF_VAR_project_name=projectname`
+
+```
+source .env
+```
+
 Edit `terraform.tf`
 ```
 # Store Terraform state in S3 (this must be prepared in advance)
