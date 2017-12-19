@@ -49,10 +49,14 @@ Add `192.168.1.3 projectname.test` to `/etc/hosts` 
 
 You can get your Heroku API key from the Heroku dashboard
 
+### Heroku
+
 ```
 export HEROKU_API_KEY=
 export HEROKU_EMAIL=
 ```
+
+### AWS
 
 For AWS, create an IAM user with Administrator rights
 
@@ -60,6 +64,10 @@ For AWS, create an IAM user with Administrator rights
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 ```
+
+Add a new S3 bucket with the name `projectname`
+
+### Terraform
 
 Open `.env` and set `TF_VAR_project_name=projectname`
 Edit `terraform.tf`
@@ -92,6 +100,10 @@ resource "aws_security_group" "projectname" {
 }
 ```
 
+Set up your environment
+```
+source .env
+```
 
 The state of Terraform is managed in S3, so it should automatically sync any changes from the remote backend. For this you'll need to manually set up an S3 bucket in the eu-west-1 region with the name wp-terraform-backend
 
