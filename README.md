@@ -11,7 +11,7 @@ git clone https://github.com/Clarkom/wp-theme-deploy.git
 
 Rename the project folder
 ```
-mv wp-theme-deploy project-name
+mv wp-theme-deploy projectname
 ```
 
 Run shell docker service
@@ -56,6 +56,11 @@ You can get your Heroku API key from the Heroku dashboard
 ```
 export HEROKU_API_KEY=
 export HEROKU_EMAIL=
+```
+
+Add the Heroku remote:
+```
+heroku git:remote -a projectname
 ```
 
 ### AWS
