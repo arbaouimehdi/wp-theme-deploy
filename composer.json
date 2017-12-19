@@ -20,9 +20,9 @@
     }
   ],
   "require": {
-    "php": ">=7.0",
+    "php": "^7.2.0",
     "ext-gd": "*",
-    "ext-redis": "*",
+    "ext-mbstring": "*",
     "johnpbloch/wordpress": "*",
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
@@ -57,7 +57,7 @@
       "chmod +x /app/.heroku/mysql/usr/bin/* && mv /app/.heroku/mysql/usr/bin/* /app/.heroku/php/bin/"
     ],
     "post-install-cmd": [
-      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content\""
+      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content; mkdir htdocs/wp-content/uploads; chmod -R 777 htdocs/wp-content/uploads; chmod -R 755 htdocs/wp-content/uploads; \""
     ]
   }
 }

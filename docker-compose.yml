@@ -13,7 +13,7 @@ services:
     command: 'bash -c "source .env && tools/start-web.sh"'
     working_dir: /app/user
     ports:
-      - 8080:8080
+      - 80:8080
     volumes:
       - .:/app/user:rw,cached
     links:
