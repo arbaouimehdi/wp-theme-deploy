@@ -10,15 +10,15 @@ provider "heroku" {}
 # Store Terraform state in S3 (this must be prepared in advance)
 terraform {
   backend "s3" {
-    bucket = "spimarexpo"
+    bucket = "projectname"
     key = "wp/terraform.tfstate"
     region = "eu-west-1"
   }
 }
 
 # AWS security group for public database access
-resource "aws_security_group" "spimarexpo" {
-  name = "spimarexpo"
+resource "aws_security_group" "projectname" {
+  name = "projectname"
   description = "public RDS security group"
   ingress {
     from_port = 3306
