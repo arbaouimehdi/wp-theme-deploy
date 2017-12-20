@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-exec /app/user/vendor/bin/wp "$@" --allow-root
