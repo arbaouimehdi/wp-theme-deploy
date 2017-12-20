@@ -9,6 +9,8 @@
 * **[Docker Compose](https://docs.docker.com/compose/install/)**
 * **[Node.js](https://nodejs.org/en/)**
 
+In the whole process `Project Name` and `projectname` has to be replaced with your project name.
+
 ## Local Development
 
 Clone the project
