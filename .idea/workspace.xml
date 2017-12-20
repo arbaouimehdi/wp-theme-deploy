@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a796cc67-f0b0-4096-8d9f-e716ebbf4bba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/wp-theme-deploy.iml" afterPath="$PROJECT_DIR$/.idea/wp-theme-deploy.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htdocs/wp-content/themes/base-theme/.travis.yml" afterPath="$PROJECT_DIR$/htdocs/wp-content/themes/base-theme/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/terraform.tf" afterPath="$PROJECT_DIR$/terraform.tf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -11,14 +15,37 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/README.md">
+                <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                  <state split_layout="SPLIT">
+                    <first_editor relative-caret-position="497">
+                      <caret line="135" column="44" lean-forward="true" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
+                      <folding />
+                    </first_editor>
+                    <second_editor />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="529">
+              <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -28,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/docker-compose.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+              <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -37,8 +64,18 @@
       <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state relative-caret-position="239">
+              <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/htdocs/wp-content/themes/base-theme/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -54,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+            <state relative-caret-position="169">
+              <caret line="108" column="12" lean-forward="false" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -67,43 +104,19 @@
       <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            <state relative-caret-position="560">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="terraform.tf" pinned="false" current-in-tab="false">
+      <file leaf-file-name="terraform.tf" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/terraform.tf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="13" />
-              <folding>
-                <marker date="1513461897000" expanded="true" signature="146:163" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="865:884" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1007:1026" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1178:1198" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1258:1290" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1324:1343" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1419:1438" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1527:1551" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1625:1644" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1794:1817" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="1951:1974" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2042:2066" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2078:2102" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2186:2205" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2359:2379" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2380:2410" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2447:2470" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2494:2522" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2549:2581" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2608:2625" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2696:2718" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2829:2851" ph="${...}" />
-                <marker date="1513461897000" expanded="true" signature="2934:2959" ph="${...}" />
-              </folding>
+            <state relative-caret-position="1000">
+              <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,6 +149,9 @@
       <find>example</find>
       <find>s</find>
       <find>spimar</find>
+      <find>composer install</find>
+      <find>add a</find>
+      <find>default</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/htdocs/wp-content/themes/base-theme</dir>
@@ -149,12 +165,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.terraform/terraform.tfstate" />
-        <option value="$PROJECT_DIR$/terraform.tf" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
+        <option value="$PROJECT_DIR$/htdocs/wp-content/themes/base-theme/.travis.yml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/tools/new_project.sh" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/terraform.tf" />
       </list>
     </option>
   </component>
@@ -172,11 +191,15 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/htdocs/wordpress/wp-content/themes/base-theme/node_modules" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1920" />
     <option name="y" value="22" />
-    <option name="width" value="1680" />
-    <option name="height" value="975" />
+    <option name="width" value="1920" />
+    <option name="height" value="1178" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -194,6 +217,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -207,9 +231,22 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-theme-deploy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wp-theme-deploy" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,6 +294,17 @@
       <option name="PROGRAM_PARAMETERS" value="plan" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
       <envs />
       <method />
     </configuration>
@@ -351,27 +399,29 @@
       <workItem from="1513434893126" duration="43000" />
       <workItem from="1513434952666" duration="12891000" />
       <workItem from="1513512541977" duration="28000" />
+      <workItem from="1513770869959" duration="776000" />
+      <workItem from="1513771805571" duration="3408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13416000" />
+    <option name="totallyTimeSpent" value="17600000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="975" extended-state="6" />
+    <frame x="-1920" y="22" width="1920" height="1178" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33333334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295099" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -392,6 +442,126 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="60" lean-forward="false" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1820">
+          <caret line="91" column="14" lean-forward="false" selection-start-line="91" selection-start-column="14" selection-end-line="91" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/terraform.tf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.terraform/terraform.tfstate">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1180">
+          <caret line="59" column="56" lean-forward="false" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="13" column="60" lean-forward="false" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/terraform.tf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.terraform/terraform.tfstate">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1040">
+          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -436,31 +606,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <marker date="1513461897000" expanded="true" signature="146:163" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="865:884" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1007:1026" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1178:1198" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1258:1290" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1324:1343" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1419:1438" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1527:1551" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1625:1644" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1794:1817" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1951:1974" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2042:2066" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2078:2102" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2186:2205" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2359:2379" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2380:2410" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2447:2470" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2494:2522" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2549:2581" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2608:2625" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2696:2718" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2829:2851" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2934:2959" ph="${...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -508,31 +654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1513461897000" expanded="true" signature="146:163" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="865:884" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1007:1026" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1178:1198" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1258:1290" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1324:1343" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1419:1438" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1527:1551" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1625:1644" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1794:1817" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1951:1974" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2042:2066" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2078:2102" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2186:2205" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2359:2379" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2380:2410" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2447:2470" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2494:2522" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2549:2581" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2608:2625" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2696:2718" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2829:2851" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2934:2959" ph="${...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -561,14 +683,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tools/ci.sh" />
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/start-web.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -576,20 +690,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/heroku.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/wp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/heroku.sh" />
+    <entry file="file://$PROJECT_DIR$/bin/wp" />
     <entry file="file://$PROJECT_DIR$/config/nginx.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -634,45 +736,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.terraform/plugins/darwin_amd64/lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/terraform.tf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <marker date="1513461897000" expanded="true" signature="146:163" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="865:884" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1007:1026" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1178:1198" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1258:1290" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1324:1343" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1419:1438" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1527:1551" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1625:1644" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1794:1817" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="1951:1974" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2042:2066" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2078:2102" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2186:2205" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2359:2379" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2380:2410" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2447:2470" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2494:2522" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2549:2581" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2608:2625" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2696:2718" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2829:2851" ph="${...}" />
-            <marker date="1513461897000" expanded="true" signature="2934:2959" ph="${...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/.terraform/plugins/darwin_amd64/lock.json" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -681,34 +745,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docker-compose.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/htdocs/wp-content/themes/base-theme/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="52" column="18" lean-forward="false" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        <state relative-caret-position="169">
+          <caret line="108" column="12" lean-forward="false" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/new_project.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="70" column="27" lean-forward="true" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="497">
+            <caret line="135" column="44" lean-forward="true" selection-start-line="135" selection-start-column="44" selection-end-line="135" selection-end-column="44" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/terraform.tf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="50" column="32" lean-forward="true" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
           <folding />
         </state>
       </provider>
