@@ -53,7 +53,7 @@ resource "aws_db_instance" "dev" {
   username = "wordpress"
   password = "${random_id.dev.hex}"
   publicly_accessible = true
-  vpc_security_group_ids = ["${aws_security_group.default.id}"]
+  vpc_security_group_ids = ["${aws_security_group.projectname.id}"]
   final_snapshot_identifier = "${var.project_name}-dev"
 }
 
