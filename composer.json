@@ -57,7 +57,8 @@
       "chmod +x /app/.heroku/mysql/usr/bin/* && mv /app/.heroku/mysql/usr/bin/* /app/.heroku/php/bin/"
     ],
     "post-install-cmd": [
-      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content; mkdir htdocs/wp-content/uploads; chmod -R 777 htdocs/wp-content/uploads; chmod -R 755 htdocs/wp-content/uploads; \""
+      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content; mkdir htdocs/wp-content/uploads; chmod -R 777 htdocs/wp-content/uploads;\""
+
     ]
   }
 }
