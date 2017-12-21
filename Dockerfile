@@ -61,7 +61,6 @@ extension=exif.so \n\
 extension=ftp.so \n\
 extension=gd.so \n\
 extension=gettext.so \n\
-extension=intl.so \n\
 extension=mbstring.so \n\
 extension=pcntl.so \n\
 extension=redis.so \n\
