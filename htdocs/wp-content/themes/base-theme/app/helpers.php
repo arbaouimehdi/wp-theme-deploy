@@ -71,6 +71,23 @@ function template_path($file, $data = [])
 }
 
 /**
+ * Get AWS dist path
+ *
+ * @param $region
+ * @param $project_name
+ * @param $asset
+ * @return string
+ */
+function aws_s3($region, $project_name, $asset){
+
+  $static_url = sage('assets')->getUri($asset);
+  $bucket_name = $project_name.'-dev-uploads';
+  $aws_url = 'https://'.$region.'.amazonaws.com/'.$bucket_name.'/'.strstr($static_url, 'dist');
+
+  return $aws_url;
+}
+
+/**
  * @param $asset
  * @return string
  */
