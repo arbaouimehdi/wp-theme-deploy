@@ -31,7 +31,11 @@
     "koodimonni-language/fi": "*",
     "wpackagist-theme/twentyseventeen": "*",
     "humanmade/s3-uploads": "*",
+
     "wpackagist-plugin/redis-cache": "*",
+    "wpackagist-plugin/imagify": "*",
+    "wpackagist-plugin/wordfence": "*",
+
     "predis/predis": "*",
     "wp-cli/wp-cli" : "*"
   },
