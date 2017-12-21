@@ -27,11 +27,13 @@
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
     "oscarotero/env": "^1.0",
-    "wp-cli/wp-cli" : "*",
     "koodimonni/composer-dropin-installer": "*",
     "koodimonni-language/fi": "*",
     "wpackagist-theme/twentyseventeen": "*",
-    "humanmade/s3-uploads": "*"
+    "humanmade/s3-uploads": "*",
+    "wpackagist-plugin/redis-cache": "*",
+    "predis/predis": "*",
+    "wp-cli/wp-cli" : "*"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
