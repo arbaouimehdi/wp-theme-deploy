@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/dist" />
       <excludeFolder url="file://$MODULE_DIR$/docker/db-data" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/wordpress" />
+      <excludeFolder url="file://$MODULE_DIR$/htdocs/wp-content/plugins" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/wp-content/themes/base-theme/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/htdocs/wp-content/themes/base-theme/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor" />
