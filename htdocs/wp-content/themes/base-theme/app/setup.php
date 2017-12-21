@@ -18,8 +18,8 @@ add_action('wp_enqueue_scripts', function () {
   }
 
   if (env('WP_ENV') == 'dev') {
-    wp_enqueue_style('sage/main.css', aws_s3('s3-eu-west-1', 'clarkom', 'styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', aws_s3('s3-eu-west-1', 'clarkom', 'scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_style('sage/main.css', aws_s3('s3-eu-west-1', 'projectname', 'styles/main.css'), false, null);
+    wp_enqueue_script('sage/main.js', aws_s3('s3-eu-west-1', 'projectname', 'scripts/main.js'), ['jquery'], null, true);
   }
 
 }, 100);
