@@ -1,17 +1,26 @@
 # Wordpress Theme Deploy
 
 
-# How to Install
+## How to Install
 
-## Requirements
+### Requirements
 
+##### Local Server
 * **[Docker](https://www.docker.com/)**
 * **[Docker Compose](https://docs.docker.com/compose/install/)**
 * **[Node.js](https://nodejs.org/en/)**
 
+##### Wordpress Plugins
+* **[Wordfence Security](https://www.wordfence.com/)**
+* **[WP Rocket](https://wp-rocket.me/)**
+* **[Advanced Custom Fields PRO](https://www.advancedcustomfields.com/pro/)**
+* **[S3 Uploads](https://github.com/humanmade/S3-Uploads)
+* **[Redis Object Cache](https://wordpress.org/plugins/redis-cache/)
+
+
 In the whole process `Project Name` and `projectname` has to be replaced with your project name.
 
-## Local Development
+### Local Development
 
 Clone the project
 ```
@@ -21,7 +30,14 @@ git clone https://github.com/Clarkom/wp-theme-deploy.git
 Rename the project folder
 ```
 mv wp-theme-deploy projectname
+cd projectname
 ```
+
+```
+cp .env.sample .env
+```
+I also recommend installing **autoenv**, so you don't have to run the source command all the time.
+
 
 Run shell docker service
 ```
@@ -47,13 +63,24 @@ mv base-theme projectname-theme
 
 Change `Base Theme` by the name of your theme `ProjectName Theme` on these files
 * `htdocs/wp-content/themes/base-theme/config/assets.php`
+
+Update `Theme Name`, `Theme URI`, `Description`, `Version`, `Author`, `Author URI`, `Text Domain` on
 * `htdocs/wp-content/themes/base-theme/resources/style.css`
 
 Change `base-theme` by the name of your theme `projectname-theme` on these files
-* `htdocs/wp-content/themes/base-theme/resources/style.css`
 * `htdocs/wp-content/themes/base-theme/composer.json`
 * `htdocs/wp-content/themes/base-theme/package.json`
 
+
+In a separate terminal run
+```
+sudo docker exec -it projectname_web_1 /bin/bash
+```
+
+Rerun this command to remove unused themes
+```
+composer install
+```
 
 Install Theme Dependencies
 ```
@@ -63,26 +90,30 @@ yarn install
 yarn build
 ```
 
-Open `htdtocs/wp-content/themes/projectname-theme` and set `devUrl: http://projectname.test`
+Open `htdtocs/wp-content/themes/projectname-theme/resources/assets/config.json` and edit these two lines
+
+```
+"publicPath": "/app/themes/projectname",
+"devUrl": "http://projectname.test",
+``` 
 
 Open `docker-compose.yml` and set `VIRTUAL_HOST=projectname.test`
 
-Add `192.168.1.3 projectname.test` to `/etc/hosts` 
+Edit `/etc/hosts` on your local machine and add `192.168.1.3 projectname.test` 
+
+
+### End
+
+* Access to the you project from [projectname.test](http://projectname.test), and Follow the steps to install wordpress
+* Log in into the admin dashboard and enable your `projectname-theme` from [http://projectname.test/wp-admin/themes.php](http://projectname.test/wp-admin/themes.php)
 
 # Deploying with Terraform
-
-Clone this repo and source set up your environment inside the project root.
-
-```
-cp .env.sample .env
-```
-I also recommend installing **autoenv**, so you don't have to run the source command all the time.
 
 You can get your Heroku API key from the Heroku dashboard
 
 Open `.env` and set `TF_VAR_project_name=projectname`
 
-### Heroku
+#### Heroku
 
 ```
 export HEROKU_API_KEY=
@@ -94,7 +125,7 @@ Add the Heroku remote:
 heroku git:remote -a projectname
 ```
 
-### AWS
+#### AWS
 
 For AWS, create an IAM user with Administrator rights
 
@@ -107,11 +138,11 @@ export AWS_SECRET_ACCESS_KEY=
 source .env
 ```
 
-Add a new S3 bucket with the name `projectname`
+Connect to your AWS console and add a new S3 bucket with the name `projectname`
 
-### Terraform
+#### Terraform
 
-Edit `terraform.tf`
+Edit `terraform.tf` and update `projectname`
 ```
 # Store Terraform state in S3 (this must be prepared in advance)
 terraform {
@@ -147,11 +178,50 @@ source .env
 ```
 
 The state of Terraform is managed in S3, so it should automatically sync any changes from the remote backend. For this you'll need to manually set up an S3 bucket in the eu-west-1 region with the name wp-terraform-backend
-
 * `terraform init`
 * `terraform apply`
 
-# Theme structure
+Add and Commit your changes
+* `git add -A`
+* `git commit -m "First Commit"`
+
+
+
+Deploy using Heroku Git:
+
+Before pushing to heroku, open `.gitignore` replace `projectname-theme`, and replace:
+```
+#######################
+# ignored theme files #
+#######################
+/htdocs/wp-content/themes/base-theme/node_modules/
+/htdocs/wp-content/themes/base-theme/vendor/
+/htdocs/wp-content/themes/base-theme/.cache-loader/
+/htdocs/wp-content/themes/base-theme/dist/
+/htdocs/wp-content/uploads/
+```
+
+By
+
+```
+#######################
+# ignored theme files #
+#######################
+/htdocs/wp-content/themes/projectname-theme/node_modules/
+/htdocs/wp-content/themes/projectname-theme/dist/scripts
+/htdocs/wp-content/themes/projectname-theme/dist/styles
+/htdocs/wp-content/uploads/
+```
+
+* `heroku login`
+* `heroku git:remote -a projectname-dev` add the heroku remote
+* `git push heroku master` commit your code to the repository and deploy it using git
+
+
+#### End
+* Access to your project online on [https://projectname.heroku.com](https://projectname.heroku.com)
+
+## Theme structure
 
 ```shell
 themes/your-theme-name/   # → Root of your Sage based theme
@@ -191,7 +261,7 @@ themes/your-theme-name/   # → Root of your Sage based theme
 * `yarn run build:production` — Compile assets for production
 
 
-# Project Structure
+## Project Structure
 ```shell
 wp-theme-deploy              # → Root of the Project
 ├── bin                      # →

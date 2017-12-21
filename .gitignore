@@ -145,16 +145,24 @@ htdocs/wp-content/uploads/*
 .env.*
 !.env*sample
 
+#########
+# Other #
+#########
 vendor/*
 !vendor/.gitkeep
 /docker/logs
 /node_modules/
 /docker/db-data/
+/.cache-loader
+terraform.tfstate.backup
+.terraform
+
+#######################
+# ignored theme files #
+#######################
 /htdocs/wp-content/themes/base-theme/node_modules/
 /htdocs/wp-content/themes/base-theme/vendor/
 /htdocs/wp-content/themes/base-theme/.cache-loader/
 /htdocs/wp-content/themes/base-theme/dist/
 /htdocs/wp-content/uploads/
-/.cache-loader
-terraform.tfstate.backup
-.terraform
+
