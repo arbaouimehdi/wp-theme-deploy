@@ -21,7 +21,11 @@ WORKDIR /app/user
 # so we can run PHP in here
 ENV PATH /app/.heroku/php/bin:/app/.heroku/php/sbin:$PATH
 
-# Install Apache
+#==================================
+#
+#               Apache
+#
+#==================================
 RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-cedar-16-stable/apache-$HTTPD_VERSION.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/5a770b914549cf2a897cbbaf379eb5adf410d464/conf/apache2/httpd.conf.default > /app/.heroku/php/etc/apache2/httpd.conf
@@ -30,7 +34,11 @@ RUN echo "\n\
 Group root\n\
 " >> /app/.heroku/php/etc/apache2/httpd.conf
 
-# Install Nginx
+#==================================
+#
+#               Nginx
+#
+#==================================
 RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-cedar-16-stable/nginx-$NGINX_VERSION.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/5a770b914549cf2a897cbbaf379eb5adf410d464/conf/nginx/nginx.conf.default > /app/.heroku/php/etc/nginx/nginx.conf
@@ -39,7 +47,11 @@ RUN echo "\n\
 user nobody root;\n\
 " >> /app/.heroku/php/etc/nginx/nginx.conf
 
-# Install PHP
+#==================================
+#
+#               PHP
+#
+#==================================
 RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-cedar-14-develop/php-$PHP_VERSION.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN mkdir -p /app/.heroku/php/etc/php/conf.d
@@ -75,11 +87,19 @@ extension=xsl.so\n\
 # Enable timestamps validation for opcache for development
 RUN sed -i /opcache.validate_timestamps/d /app/.heroku/php/etc/php/conf.d/010-ext-zend_opcache.ini
 
-# Install Composer
+#==================================
+#
+#               Composer
+#
+#==================================
 RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-cedar-14-stable/composer-$COMPOSER_VERSION.tar.gz | tar xz -C /app/.heroku/php
 RUN composer self-update
 
-# Install Node.js
+#==================================
+#
+#               Nodejs
+#
+#==================================
 RUN curl -s https://s3pository.heroku.com/node/v$NODE_ENGINE/node-v$NODE_ENGINE-linux-x64.tar.gz | tar --strip-components=1 -xz -C /app/heroku/node
 
 # Export the node path in .profile.d

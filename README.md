@@ -14,8 +14,8 @@
 * **[Wordfence Security](https://www.wordfence.com/)**
 * **[WP Rocket](https://wp-rocket.me/)**
 * **[Advanced Custom Fields PRO](https://www.advancedcustomfields.com/pro/)**
-* **[S3 Uploads](https://github.com/humanmade/S3-Uploads)
-* **[Redis Object Cache](https://wordpress.org/plugins/redis-cache/)
+* **[S3 Uploads](https://github.com/humanmade/S3-Uploads)**
+* **[Redis Object Cache](https://wordpress.org/plugins/redis-cache/)**
 
 
 In the whole process `Project Name` and `projectname` has to be replaced with your project name.
