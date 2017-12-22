@@ -99,13 +99,14 @@ Open `htdtocs/wp-content/themes/projectname-theme/resources/assets/config.json` 
 
 Open `docker-compose.yml` and set `VIRTUAL_HOST=projectname.test`
 
-Edit `/etc/hosts` on your local machine and add `192.168.1.3 projectname.test` 
+Edit `/etc/hosts` on your local machine and add `192.168.1.3 projectname.test`
 
 
 ### End
 
 * Access to the you project from [projectname.test](http://projectname.test), and Follow the steps to install wordpress
 * Log in into the admin dashboard and enable your `projectname-theme` from [http://projectname.test/wp-admin/themes.php](http://projectname.test/wp-admin/themes.php)
+* Enter to `cd /app/user/htdocs/wp-content/uploads` and change the folder permission from `777` to `755` using `chmod 755 uploads` 
 
 # Deploying with Terraform
 
