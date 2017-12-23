@@ -1,5 +1,6 @@
 # Wordpress Theme Deploy
 
+This project presente the complete workflow to deploy a wordpress website using [Heroku](https://www.heroku.com/) and [AWS](https://aws.amazon.com).
 
 ## How to Install
 
