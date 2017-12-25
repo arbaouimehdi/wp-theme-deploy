@@ -14,6 +14,9 @@ ENV NODE_ENGINE 8.8.1
 
 ENV PATH /app/heroku/node/bin:/app/user/node_modules/.bin:$PATH
 
+# Install sudo
+RUN apt-get update && apt-get install sudo
+
 # Create some needed directories
 RUN mkdir -p /app/.heroku/php /app/heroku/node /app/.profile.d
 WORKDIR /app/user
@@ -30,6 +33,10 @@ RUN echo "\n\
 Group root\n\
 " >> /app/.heroku/php/etc/apache2/httpd.conf
 
+#
+#
+#
+#
 # Install Nginx
 RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-cedar-16-stable/nginx-$NGINX_VERSION.tar.gz | tar xz -C /app/.heroku/php
 # Config
@@ -39,12 +46,21 @@ RUN echo "\n\
 user nobody root;\n\
 " >> /app/.heroku/php/etc/nginx/nginx.conf
 
+#
+#
+#
+#
 # Install PHP
 RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-cedar-14-develop/php-$PHP_VERSION.tar.gz | tar xz -C /app/.heroku/php
 # Config
 RUN mkdir -p /app/.heroku/php/etc/php/conf.d
-RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/master/support/build/_conf/php/php.ini > /app/.heroku/php/etc/php/php.ini
+COPY config/php.ini /app/.heroku/php/etc/php/php.ini
+#RUN curl --silent --location https://raw.githubusercontent.com/heroku/heroku-buildpack-php/master/support/build/_conf/php/php.ini > /app/.heroku/php/etc/php/php.ini
 
+#
+#
+#
+#
 # Install Redis extension for PHP 7
 RUN curl --silent --location https://lang-php.s3.amazonaws.com/dist-cedar-14-develop/extensions/no-debug-non-zts-20170718/redis-$REDIS_VERSION.tar.gz | tar xz -C /app/.heroku/php
 
