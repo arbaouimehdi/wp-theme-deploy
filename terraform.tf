@@ -37,7 +37,7 @@ resource "aws_security_group" "projectname" {
 # Random password for database
 resource "random_id" "dev" {
   keepers = {
-    project_name = "${var.projectname}"
+    project_name = "${var.project_name}"
   }
   byte_length = 16
 }
@@ -45,7 +45,7 @@ resource "random_id" "dev" {
 # RDS MariaDB instance
 resource "aws_db_instance" "dev" {
   engine = "mariadb"
-  identifier = "${var.projectname}-dev"
+  identifier = "${var.project_name}-dev"
   allocated_storage = 5
   engine_version = "10.1.23"
   instance_class = "db.t2.micro"
@@ -59,7 +59,7 @@ resource "aws_db_instance" "dev" {
 
 # IAM user for S3 bucket
 resource "aws_iam_user" "dev" {
-  name = "${var.projectname}-dev-user"
+  name = "${var.project_name}-dev-user"
 }
 
 # Access keys for IAM user
@@ -69,7 +69,7 @@ resource "aws_iam_access_key" "dev" {
 
 # S3 bucket for uploads
 resource "aws_s3_bucket" "dev" {
-  bucket = "${var.projectname}-dev-uploads"
+  bucket = "${var.project_name}-dev-uploads"
   acl = "public-read"
   force_destroy = "true"
 }
@@ -100,7 +100,7 @@ EOF
 
 # Heroku App
 resource "heroku_app" "dev" {
-  name = "${var.projectname}-dev"
+  name = "${var.project_name}-dev"
   region = "eu"
   buildpacks = [
     "heroku/php",
