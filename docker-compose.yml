@@ -34,12 +34,15 @@ services:
       - mysql
       - redis
 
-  adminer:
-    image: clue/adminer:latest
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
     ports:
-      - 8081:80
+      - 8082:80
     links:
       - mysql
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: password
 
   mysql:
     image: mysql:latest
