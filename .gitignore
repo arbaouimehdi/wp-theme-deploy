@@ -148,7 +148,6 @@ htdocs/wp-content/uploads/*
 #########
 # Other #
 #########
-vendor/*
 !vendor/.gitkeep
 /docker/logs
 /node_modules/
@@ -160,8 +159,8 @@ terraform.tfstate.backup
 #######################
 # ignored theme files #
 #######################
-/htdocs/wp-content/themes/base-theme/node_modules/
-/htdocs/wp-content/themes/base-theme/vendor/
-/htdocs/wp-content/themes/base-theme/.cache-loader/
-/htdocs/wp-content/themes/base-theme/dist/
+node_modules/
+vendor/
+.cache-loader/
+dist/
 
