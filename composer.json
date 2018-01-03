@@ -30,17 +30,19 @@
     "koodimonni/composer-dropin-installer": "*",
     "koodimonni-language/fi": "*",
     "wpackagist-theme/twentyseventeen": "*",
-    "humanmade/s3-uploads": "*",
 
+    "wpackagist-plugin/wordfence": "*",
+    "humanmade/s3-uploads": "*",
     "wpackagist-plugin/redis-cache": "*",
     "wpackagist-plugin/imagify": "*",
-    "wpackagist-plugin/wordfence": "*",
 
     "predis/predis": "*",
     "wp-cli/wp-cli" : "*"
   },
   "require-dev": {
-    "heroku/heroku-buildpack-php": "*"
+    "heroku/heroku-buildpack-php": "*",
+    "roots/sage-installer": "~1.3",
+    "squizlabs/php_codesniffer": "3.0.2"
   },
   "extra": {
     "installer-paths": {
@@ -64,7 +66,7 @@
       "cp config/php.ini /app/.heroku/php/etc/php/"
     ],
     "post-install-cmd": [
-      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content; mkdir htdocs/wp-content/uploads; chmod -R 777 htdocs/wp-content/uploads;\""
+      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content; \""
 
     ]
   }

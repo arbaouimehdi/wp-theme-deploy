@@ -164,5 +164,4 @@ terraform.tfstate.backup
 /htdocs/wp-content/themes/base-theme/vendor/
 /htdocs/wp-content/themes/base-theme/.cache-loader/
 /htdocs/wp-content/themes/base-theme/dist/
-/htdocs/wp-content/uploads/
 
