@@ -10,7 +10,7 @@ services:
     build:
       context: .
     image: herokuphp
-    command: 'bash -c "source .env && tools/start-web.sh"'
+    command: 'bash -c "source .env && tools/start_web.sh"'
     working_dir: /app/user
     ports:
       - 80:8080

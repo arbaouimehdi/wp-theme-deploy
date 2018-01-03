@@ -1,12 +1,40 @@
 # Wordpress Theme Deploy
 
-This project presente the complete workflow to deploy a wordpress website using [Heroku](https://www.heroku.com/) and [AWS](https://aws.amazon.com).
+This Project aims to present a complete workflow to start a new Wordpress Project.
+
+
+## Goals:
+* [Dockerfile](https://github.com/Clarkom/wp-theme-deploy/blob/master/Dockerfile)
+  and [docker-compose.yml](https://github.com/Clarkom/wp-theme-deploy/blob/master/docker-compose.yml) has to include the local server config.
+* Local Server environment has to be the same as the deployment environment for:
+    * PHP
+    * REDIS
+    * Nginx
+    * Composer
+    * Node Engine
+* Project Files has to be on Heroku.
+* Database has to be on AWS as an RDS MariaDB instance.
+* Compiled Static Files using Webpack has to be on an AWS S3 bucket.
+    * Images
+    * Javascript
+    * CSS
+* All Required Wordpress Plugins has to be installed.
+
+### Online Services
+
+* Amazon Web Services
+    * S3
+    * RDS
+* Heroku
+    * Redis
+    * Papertail
 
 ## How to Install
 
 ### Requirements
 
 ##### Local Server
+* **Ubuntu Xenial 16.04**
 * **[Docker](https://www.docker.com/)**
 * **[Docker Compose](https://docs.docker.com/compose/install/)**
 * **[Node.js](https://nodejs.org/en/)**
@@ -105,7 +133,8 @@ Edit `/etc/hosts` on your local machine and add `192.168.1.3 projectname.test`
 
 ### End
 
-* Access to the you project from [projectname.test](http://projectname.test), and Follow the steps to install wordpress
+* Access to the you project from [projectname.test](http://projectname.test),
+ and Follow the steps to install wordpress
 * Log in into the admin dashboard and enable your `projectname-theme` from [http://projectname.test/wp-admin/themes.php](http://projectname.test/wp-admin/themes.php)
 * Enter to `cd /app/user/htdocs/wp-content/uploads` and change the folder permission from `777` to `755` using `chmod 755 uploads` 
 
@@ -291,7 +320,7 @@ wp-theme-deploy              # → Root of the Project
 ├── Procfile                 # →
 ├── terraform.tf             # → Deployment infrastructure plan
 ├── tools                    # →
-│   └── start-web.sh         # →
+│   └── star_web.sh         # →
 ```
 
 ### Docker commands

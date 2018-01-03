@@ -16,6 +16,13 @@ terraform {
   }
 }
 
+
+#==================================
+#
+#          Amzon Web Services
+#
+#==================================
+
 # AWS security group for public database access
 resource "aws_security_group" "projectname" {
   name = "projectname"
@@ -97,6 +104,12 @@ resource "aws_s3_bucket_policy" "dev" {
 }
 EOF
 }
+
+#==================================
+#
+#               Heroku
+#
+#==================================
 
 # Heroku App
 resource "heroku_app" "dev" {

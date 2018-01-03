@@ -1,1 +1,1 @@
-web: tools/start-web.sh
+web: tools/start_web.sh
