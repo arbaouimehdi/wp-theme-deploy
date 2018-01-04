@@ -1,0 +1,25 @@
+---
+sudo: required
+services:
+  - docker
+language: php
+php:
+  - 7.2
+env:
+  - WP_ENV=testing
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.composer/vendor
+    - vendor
+before_install:
+  - cp docker-compose-travis.yml docker-compose.yml
+  - docker-compose -v
+  - docker -v
+install:
+before_script:
+script:
+  - sudo -E docker-compose -f docker-compose.yml run ci
+after_script:
+  - docker ps -a
+  - docker-compose logs
