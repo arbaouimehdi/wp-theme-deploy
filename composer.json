@@ -63,10 +63,12 @@
       "test -f /app/.heroku/mysql-core.deb || wget http://security.ubuntu.com/ubuntu/pool/main/m/mysql-5.7/mysql-client-5.7_5.7.20-0ubuntu0.16.04.1_amd64.deb -qO /app/.heroku/mysql-client.deb",
       "dpkg -x /app/.heroku/mysql-client.deb /app/.heroku/mysql; dpkg -x /app/.heroku/mysql-client-core.deb /app/.heroku/mysql",
       "chmod +x /app/.heroku/mysql/usr/bin/* && mv /app/.heroku/mysql/usr/bin/* /app/.heroku/php/bin/",
-      "cp config/php.ini /app/.heroku/php/etc/php/"
+      "cp config/php/php.ini /app/.heroku/php/etc/php/"
     ],
     "post-install-cmd": [
-      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content; \""
+      "/bin/bash -c \"rm -r htdocs/wordpress/wp-content; ln -s ../wp-content htdocs/wordpress/wp-content;\"",
+      "/bin/bash -c 'chown -R www-data:www-data htdocs/wp-content/'",
+      "/bin/bash -c 'chown -R www-data:www-data htdocs/wordpress/'"
 
     ]
   }
