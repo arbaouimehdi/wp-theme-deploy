@@ -24,7 +24,7 @@ terraform {
 #==================================
 
 # AWS security group for public database access
-resource "aws_security_group" "projectname" {
+resource "aws_security_group" "default" {
   name = "projectname"
   description = "public RDS security group"
   ingress {
@@ -60,7 +60,7 @@ resource "aws_db_instance" "dev" {
   username = "wordpress"
   password = "${random_id.dev.hex}"
   publicly_accessible = true
-  vpc_security_group_ids = ["${aws_security_group.projectname.id}"]
+  vpc_security_group_ids = ["${aws_security_group.default.id}"]
   final_snapshot_identifier = "${var.project_name}-dev"
 }
 
