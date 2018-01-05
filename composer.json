@@ -34,7 +34,6 @@
     "oscarotero/env": "^1.0",
     "koodimonni/composer-dropin-installer": "*",
     "koodimonni-language/fi": "*",
-    "wpackagist-theme/twentyseventeen": "*",
 
     "wpackagist-plugin/wordfence": "*",
     "humanmade/s3-uploads": "*",
@@ -54,10 +53,10 @@
     "merge-plugin": {
       "include": [
         "composer.json",
-        "htdocs/wordpress/wp-content/themes/projectname-theme/composer.json"
+        "htdocs/wp-content/themes/projectname-theme/composer.json"
       ],
       "require": [
-        "htdocs/wordpress/wp-content/themes/projectname-theme/composer.json"
+        "htdocs/wp-content/themes/projectname-theme/composer.json"
       ],
       "recurse": true,
       "replace": false,
@@ -70,12 +69,10 @@
     "installer-paths": {
       "htdocs/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
       "htdocs/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "htdocs/wp-content/themes/{$name}": ["type:wordpress-theme"]
     },
     "dropin-paths": {
       "htdocs/wp-content/languages/": ["vendor:koodimonni-language"],
       "htdocs/wp-content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
-      "htdocs/wp-content/languages/themes/": ["vendor:koodimonni-theme-language"]
     },
     "wordpress-install-dir": "htdocs/wordpress"
   },
