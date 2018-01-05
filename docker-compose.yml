@@ -30,7 +30,6 @@ services:
     working_dir: /app/user
     volumes:
       - .:/app/user:rw,cached
-    #  - ./htdocs/wp-content:/app/user/htdocs/wordpress/
     links:
       - mysql
       - redis
