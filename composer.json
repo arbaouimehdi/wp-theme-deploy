@@ -68,11 +68,11 @@
     },
     "installer-paths": {
       "htdocs/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-      "htdocs/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "htdocs/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"]
     },
     "dropin-paths": {
       "htdocs/wp-content/languages/": ["vendor:koodimonni-language"],
-      "htdocs/wp-content/languages/plugins/": ["vendor:koodimonni-plugin-language"],
+      "htdocs/wp-content/languages/plugins/": ["vendor:koodimonni-plugin-language"]
     },
     "wordpress-install-dir": "htdocs/wordpress"
   },
