@@ -152,7 +152,7 @@ htdocs/wp-content/uploads/*
 /docker/logs
 /node_modules/
 /docker/db-data/
-/.cache-loader
+.cache-loader/
 terraform.tfstate.backup
 .terraform
 
@@ -161,6 +161,5 @@ terraform.tfstate.backup
 #######################
 node_modules/
 vendor/
-.cache-loader/
 dist/
 
