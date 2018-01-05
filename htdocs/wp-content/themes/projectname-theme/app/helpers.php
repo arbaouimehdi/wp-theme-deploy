@@ -5,7 +5,7 @@ namespace App;
 use Roots\Sage\Container;
 
 /**
- * Get the sage container.
+ * Get the projectname container.
  *
  * @param string $abstract
  * @param array  $parameters

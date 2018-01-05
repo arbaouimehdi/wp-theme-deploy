@@ -10,7 +10,7 @@ return [
     | This is the absolute path to your theme directory.
     |
     | Example:
-    |   /srv/www/example.com/current/web/app/themes/sage
+    |   /srv/www/example.com/current/web/app/themes/projectname
     |
     */
 

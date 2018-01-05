@@ -5,8 +5,8 @@
       "./styles/main.scss"
     ]
   },
-  "publicPath": "/app/themes/sage",
-  "devUrl": "http://example.test",
+  "publicPath": "/app/themes/projectname",
+  "devUrl": "http://projectname.test",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [

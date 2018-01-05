@@ -6,14 +6,14 @@ terraform.tf
 Dockerfile
 .env.sample
 .env.test.sample
+.travis.yml
 docker/
 tools/clean_containers.sh
 tools/clean_images.sh
 tools/new_project.sh
 
 # Theme Files
-/htdocs/wp-content/themes/base-theme/resources/assets/
-/htdocs/wp-content/themes/base-theme/.travis.yml
-/htdocs/wp-content/themes/base-theme/package.json
-/htdocs/wp-content/themes/base-theme/yarn.lock
+/htdocs/wp-content/themes/projectname-theme/resources/assets/
+/htdocs/wp-content/themes/projectname-theme/package.json
+/htdocs/wp-content/themes/projectname-theme/yarn.lock
 

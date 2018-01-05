@@ -13,13 +13,13 @@ use Roots\Sage\Template\BladeProvider;
 add_action('wp_enqueue_scripts', function () {
 
   if (env('WP_ENV') == 'local') {
-    wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_style('projectname/main.css', asset_path('styles/main.css'), false, null);
+    wp_enqueue_script('projectname/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
   }
 
   if (env('WP_ENV') == 'dev') {
-    wp_enqueue_style('sage/main.css', aws_s3('s3-eu-west-1', 'projectname', 'styles/main.css'), false, null);
-    wp_enqueue_script('sage/main.js', aws_s3('s3-eu-west-1', 'projectname', 'scripts/main.js'), ['jquery'], null, true);
+    wp_enqueue_style('projectname/main.css', aws_s3('s3-eu-west-1', 'projectname', 'styles/main.css'), false, null);
+    wp_enqueue_script('projectname/main.js', aws_s3('s3-eu-west-1', 'projectname', 'scripts/main.js'), ['jquery'], null, true);
   }
 
 }, 100);
@@ -49,7 +49,7 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
+        'primary_navigation' => __('Primary Navigation', 'projectname')
     ]);
 
     /**
@@ -88,11 +88,11 @@ add_action('widgets_init', function () {
         'after_title'   => '</h3>'
     ];
     register_sidebar([
-        'name'          => __('Primary', 'sage'),
+        'name'          => __('Primary', 'projectname'),
         'id'            => 'sidebar-primary'
     ] + $config);
     register_sidebar([
-        'name'          => __('Footer', 'sage'),
+        'name'          => __('Footer', 'projectname'),
         'id'            => 'sidebar-footer'
     ] + $config);
 });

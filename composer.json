@@ -21,7 +21,7 @@
   ],
   "autoload": {
     "classmap": [
-      "htdocs/wp-content/themes/base-theme/app/"
+      "htdocs/wp-content/themes/projectname-theme/app/"
     ]
   },
   "require": {
@@ -54,10 +54,10 @@
     "merge-plugin": {
       "include": [
         "composer.json",
-        "htdocs/wordpress/wp-content/themes/base-theme/composer.json"
+        "htdocs/wordpress/wp-content/themes/projectname-theme/composer.json"
       ],
       "require": [
-        "htdocs/wordpress/wp-content/themes/base-theme/composer.json"
+        "htdocs/wordpress/wp-content/themes/projectname-theme/composer.json"
       ],
       "recurse": true,
       "replace": false,

@@ -18,10 +18,10 @@ if (post_password_required()) {
       <nav>
         <ul class="pager">
           @if (get_previous_comments_link())
-            <li class="previous">@php(previous_comments_link(__('&larr; Older comments', 'sage')))</li>
+            <li class="previous">@php(previous_comments_link(__('&larr; Older comments', 'projectname')))</li>
           @endif
           @if (get_next_comments_link())
-            <li class="next">@php(next_comments_link(__('Newer comments &rarr;', 'sage')))</li>
+            <li class="next">@php(next_comments_link(__('Newer comments &rarr;', 'projectname')))</li>
           @endif
         </ul>
       </nav>
@@ -30,7 +30,7 @@ if (post_password_required()) {
 
   @if (!comments_open() && get_comments_number() != '0' && post_type_supports(get_post_type(), 'comments'))
     <div class="alert alert-warning">
-      {{ __('Comments are closed.', 'sage') }}
+      {{ __('Comments are closed.', 'projectname') }}
     </div>
   @endif
 

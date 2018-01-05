@@ -20,7 +20,7 @@ services:
       - mysql
       - redis
     environment:
-      - VIRTUAL_HOST=example.test
+      - VIRTUAL_HOST=projectname.test
 
   shell:
     build:
