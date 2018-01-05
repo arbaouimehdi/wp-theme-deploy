@@ -36,7 +36,7 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 if (!class_exists('Roots\\Base\\Container')) {
   if (!file_exists($composer = __DIR__.'/../../../../../vendor/autoload.php')) {
     $sage_error(
-      __('You must run <code>composer install</code> from the Sage directory.', 'projectname'),
+      __('You must run <code>composer install</code> from the projectname directory.', 'projectname'),
       __('Autoloader not found.', 'projectname')
     );
   }
