@@ -37,6 +37,8 @@
 
     "wpackagist-plugin/wordfence": "*",
     "humanmade/s3-uploads": "*",
+    "wpackagist-plugin/query-monitor": "*",
+    "wpackagist-plugin/user-role-editor": "*",
     "wpackagist-plugin/redis-cache": "*",
     "wpackagist-plugin/imagify": "*",
 
