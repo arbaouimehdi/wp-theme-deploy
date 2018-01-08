@@ -25,8 +25,9 @@ Local Server and Heroku environment
 To create a new project, you've first to download the shell script using `wget`, or your can copy the content from this [gist](https://goo.gl/1BWa9k):
 ```
 wget https://goo.gl/1BWa9k
-chmod u+x new_project.sh
-./new_project.sh projectname
+mv 1BWa9k new_project
+chmod u+x new_project
+./new_project projectname
 ```
 ***
 ### From the Docker Container
