@@ -2,257 +2,181 @@
 
 This Project aims to present a complete workflow to start a new Wordpress Project.
 
+> - In the whole process **projectname** has to be replaced with you project name.
+> - Example: **clarkom**, **clarkominsight**.
 
-## Goals:
-* [Dockerfile](https://github.com/Clarkom/wp-theme-deploy/blob/master/Dockerfile)
-  and [docker-compose.yml](https://github.com/Clarkom/wp-theme-deploy/blob/master/docker-compose.yml) has to include the local server config.
-* Local Server environment has to be the same as the deployment environment for:
-    * PHP
-    * REDIS
-    * Nginx
-    * Composer
-    * Node Engine
-* Project Files has to be on Heroku.
-* Database has to be on AWS as an RDS MariaDB instance.
-* Compiled Static Files using Webpack has to be on an AWS S3 bucket.
-    * Images
-    * Javascript
-    * CSS
-* All Required Wordpress Plugins has to be installed.
+## Environment:
+Local Server and Heroku environment
+- PHP `7.2.0`
+- REDIS `3.1.4`
+- Nginx `1.8.1`
+- Composer `1.5.2`
+- Node Engine `8.8.1`
 
-### Online Services
-
-* Amazon Web Services
-    * S3
-    * RDS
-* Heroku
-    * Redis
-    * Papertail
-
-## How to Install
-
-### Requirements
-
-##### Local Server
-* **Ubuntu Xenial 16.04**
-* **[Docker](https://www.docker.com/)**
-* **[Docker Compose](https://docs.docker.com/compose/install/)**
-* **[Node.js](https://nodejs.org/en/)**
-
-##### Wordpress Plugins
-* **[Wordfence Security](https://www.wordfence.com/)**
-* **[WP Rocket](https://wp-rocket.me/)**
-* **[Advanced Custom Fields PRO](https://www.advancedcustomfields.com/pro/)**
-* **[S3 Uploads](https://github.com/humanmade/S3-Uploads)**
-* **[Redis Object Cache](https://wordpress.org/plugins/redis-cache/)**
+### Access Links
+- http://projectname.test `(docker web service)`
+- http://projectname.test:8082 `(docker phpmyadmin service)`
+- http://projectname-dev.herokuapp.com `(heroku app)`
 
 
-In the whole process `Project Name` and `projectname` has to be replaced with your project name.
+# Local Deployment
 
-### Local Development
-
-Clone the project
+***
+To create a new project, you've first to download the shell script using `wget`, or your can copy the content from this [gist](https://goo.gl/1BWa9k):
 ```
-git clone https://github.com/Clarkom/wp-theme-deploy.git
+wget https://goo.gl/1BWa9k
+chmod u+x new_project.sh
+./new_project.sh projectname
 ```
-
-Rename the project folder
-```
-mv wp-theme-deploy projectname
-cd projectname
-```
-
-```
-cp .env.sample .env
-```
-I also recommend installing **autoenv**, so you don't have to run the source command all the time.
-
-
-Run shell docker service
-```
-sudo npm run shell
-```
-
-Install PHP Dependencies
+***
+### From the Docker Container
 ```
 composer install
-exit
+composer update
+chown -R www-data:www-data htdocs/wp-content/
+chown -R www-data:www-data htdocs/wordpress/
+chown -R 1000:1000 htdocs/wp-content/themes/projectname-theme
 ```
-
-Run web docker service
+***
+### From your Local Machine
+Add `projectname.test` to your `/etc/hosts`
+```
+sudo vi /etc/hosts
+```
+Start the docker `web` service
 ```
 sudo npm start
 ```
+- Open http://projectname.test and install Wordpress.
+- Enable Installed theme from http://projectname.test/wp-admin/themes.php
 
-Rename theme folder
+### phpMyAdmin
+To access to phpMyAdmin through http://projectname.test:8082 you have to start the docker `phpmyadmin` service:
 ```
-cd htdocs/wp-content/themes/
-mv base-theme projectname-theme
+sudo docker-compose up phpmyadmin
 ```
-
-Change `Base Theme` by the name of your theme `ProjectName Theme` on these files
-* `htdocs/wp-content/themes/base-theme/config/assets.php`
-
-Update `Theme Name`, `Theme URI`, `Description`, `Version`, `Author`, `Author URI`, `Text Domain` on
-* `htdocs/wp-content/themes/base-theme/resources/style.css`
-
-Change `base-theme` by the name of your theme `projectname-theme` on these files
-* `htdocs/wp-content/themes/base-theme/composer.json`
-* `htdocs/wp-content/themes/base-theme/package.json`
-
-
-In a separate terminal run
+#### Phpmyadmin credentials
 ```
-sudo docker exec -it projectname_web_1 /bin/bash
+username: root
+password: password
 ```
-
-Rerun this command to remove unused themes
-```
-composer install
-```
-
-Install Theme Dependencies
-```
-cd htdocs/wp-content/themes/projectname-theme
-composer install
-yarn install
-yarn build
-```
-
-Open `htdtocs/wp-content/themes/projectname-theme/resources/assets/config.json` and edit these two lines
-
-```
-"publicPath": "/app/themes/projectname",
-"devUrl": "http://projectname.test",
-``` 
-
-Open `docker-compose.yml` and set `VIRTUAL_HOST=projectname.test`
-
-Edit `/etc/hosts` on your local machine and add `192.168.1.3 projectname.test`
-
-
-### End
-
-* Access to the you project from [projectname.test](http://projectname.test),
- and Follow the steps to install wordpress
-* Log in into the admin dashboard and enable your `projectname-theme` from [http://projectname.test/wp-admin/themes.php](http://projectname.test/wp-admin/themes.php)
-* Enter to `cd /app/user/htdocs/wp-content/uploads` and change the folder permission from `777` to `755` using `chmod 755 uploads` 
 
 # Deploying with Terraform
 
-You can get your Heroku API key from the Heroku dashboard
-
-Open `.env` and set `TF_VAR_project_name=projectname`
-
-#### Heroku
-
-```
-export HEROKU_API_KEY=
-export HEROKU_EMAIL=
-```
-
-Add the Heroku remote:
-```
-heroku git:remote -a projectname
-```
-
-#### AWS
-
-For AWS, create an IAM user with Administrator rights
-
-```
-export AWS_ACCESS_KEY_ID=
-export AWS_SECRET_ACCESS_KEY=
-```
-
+***
+### Add AWS & Heroku Credentials
+- Access to you AWS console and [Create a bucket](https://s3.console.aws.amazon.com/s3/home?region=eu-west-1#) with the name of your project `projectname`, and use as a Region **EU (ireland)**
+- Edit `.env` file and Add Heroku & AWS credentials, and validate the modifications.
 ```
 source .env
 ```
-
-Connect to your AWS console and add a new S3 bucket with the name `projectname`
-
-#### Terraform
-
-Edit `terraform.tf` and update `projectname`
+***
+### Terraform
+The state of Terraform is managed in S3, so it should automatically sync any changes from the remote backend.
 ```
-# Store Terraform state in S3 (this must be prepared in advance)
-terraform {
-  backend "s3" {
-    bucket = "projectname"
-    key = "wp/terraform.tfstate"
-    region = "eu-west-1"
-  }
-}
+terraform init
+terraform apply
+```
+***
+### Git & Heroku 
+If you're not logged to heroku:
+```
+heroku login
+```
+Last steps are used to push the project into Heroku, but before that, you've to initialize a new git repository.
+```
+git init
+heroku git:remote -a projectname-dev
+git add -A
+git commit -m “Hello World“
+git push heroku master
+```
+- Now you can access to your app from [https://projectname-dev.herokuapp.com/](https://projectname-dev.herokuapp.com/)
+- Go to your wordpress admin dashboard [https://projectname-dev.herokuapp.com/wp-admin](https://projectname-dev.herokuapp.com/wp-admin) and enable `Redis Object Cache` and `S3 Uploads` plugins
+***
+### Generated Static Files
+On each `yarn build` or `yarn build:production` from the docker `web` service you have to upload the generated `dist` folder to `projectname-dev-uploads` on your **AWS S3** bucket, and don't forget to make the bucket **public**.
+ 
 
-# AWS security group for public database access
-resource "aws_security_group" "projectname" {
-  name = "projectname"
-  description = "public RDS security group"
-  ingress {
-    from_port = 3306
-    to_port = 3306
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-}
+# Essential Plugins
+
+This is a consistent list of Wordpress Plugins to install, some plugins **(Free)** already exist on `composer.json`, and some others **(Premium)** are not set as default plugins, you've to install them manually. 
+
+### Essential (14 plugins)
+
+**Security**
+- [Wordfence Security](https://www.wordfence.com/wordfence-signup/) **`(Premium)`**
+
+**Content** 
+- [S3 Uploads](https://github.com/humanmade/S3-Uploads) `(Free)`
+- [Advanced Custom Fields PRO](https://www.advancedcustomfields.com/pro/) **`(Premium)`**
+- [WP Real Media Library](https://codecanyon.net/item/wordpress-real-media-library-media-categories-folders/13155134) **`(Premium)`**
+
+**Forms**
+- [Gravity Forms](https://www.gravityforms.com/) **`(Premium)`**
+- [Gravity Forms MailChimp Add-On](https://www.gravityforms.com/add-ons/mailchimp/) **`(Premium)`**
+- [Real Time Validation for Gravity Forms](https://wordpress.org/plugins/real-time-validation-for-gravity-forms/) `(Free)`
+
+**SEO**
+- [Yoast SEO Premium](https://yoast.com/wordpress/plugins/seo/) **`(Premium)`**
+- [ACF Content Analysis for Yoast SEO](https://wordpress.org/plugins/acf-content-analysis-for-yoast-seo/) `(Free)`
+
+**Performance**
+- [Imagify](https://wordpress.org/plugins/imagify/) `(Free)`
+- [WP Rocket](https://wp-rocket.me/) **`(Premium)`**
+- [Redis Object Cache](https://wordpress.org/plugins/redis-cache/) `(Free)`
+
+**Miscellaneous**
+- [User Role Editor]() `(Free)`
+
+**Debugging**
+- [Query Monitor](https://wordpress.org/plugins/user-role-editor/) `(Free)`
+
+### Multilingual (6 plugins)
+In case of a multilingual website, these are some extra plugins to install manually:
+
+**Multilingual**
+- [Advanced Custom Fields Multilingual](https://wpml.org/account/downloads/) **`(Premium)`**
+- [Gravity Forms Multilingual](https://wpml.org/account/downloads/) **`(Premium)`**
+- [WPML Media](https://wpml.org/account/downloads/) **`(Premium)`**
+- [WPML Multilingual CMS](https://wpml.org/account/downloads/) **`(Premium)`**
+- [WPML String Translation](https://wpml.org/account/downloads/) **`(Premium)`**
+- [WPML Translation Management](https://wpml.org/account/downloads/)  **`(Premium)`**
+
+
+# Project Structure
+```shell
+wp-theme-deploy              # → Root of the Project
+├── bin                      # →
+│   └── wp                   # →
+├── composer.json            # → Heroku Autoloading and Server config
+├── composer.lock            # → Composer lock file (never edit)
+├── config                   # →
+│   ├── env                  # →
+        ├── development.php  # → Development environment config
+        ├── local.php        # → Local environment config
+        ├── production.php   # → Production environment config
+        ├── qa.php           # → QA(Quality Assurance) environment config
+│   ├── nginx.conf           # → nginx server config
+│   └── wp-config.php        # → This file contains WordPress config and replaces the usual wp-config.php
+├── docker                   # → This folder will include db-data (database folder) and nginx logs
+├── docker-compose.yml       # → Local server docker services
+├── Dockerfile               # → Docker build images
+├── htdocs                   # → 
+│   ├── index.php            # → 
+│   ├── wp-config.php        # →
+│   ├── wp-content           # →
+│   └── wp-load.php          # →
+├── package.json             # → Heroku Javascript Dependencies
+├── phpcs.xml                # → PHP Codesniffer rules
+├── Procfile                 # →
+├── terraform.tf             # → Deployment infrastructure plan
+├── tools                    # →
+│   └── new_project.sh       # → Creating a new project steps
+│   └── star_web.sh          # →
 ```
 
-Set up your environment
-```
-source .env
-```
-
-The state of Terraform is managed in S3, so it should automatically sync any changes from the remote backend. For this you'll need to manually set up an S3 bucket in the eu-west-1 region with the name wp-terraform-backend
-* `terraform init`
-* `terraform apply`
-
-Add and Commit your changes
-* `git add -A`
-* `git commit -m "First Commit"`
-
-
-
-Deploy using Heroku Git:
-
-Before pushing to heroku, open `.gitignore` replace `projectname-theme`, and replace:
-```
-#######################
-# ignored theme files #
-#######################
-/htdocs/wp-content/themes/base-theme/node_modules/
-/htdocs/wp-content/themes/base-theme/vendor/
-/htdocs/wp-content/themes/base-theme/.cache-loader/
-/htdocs/wp-content/themes/base-theme/dist/
-/htdocs/wp-content/uploads/
-```
-
-By
-
-```
-#######################
-# ignored theme files #
-#######################
-/htdocs/wp-content/themes/projectname-theme/node_modules/
-/htdocs/wp-content/themes/projectname-theme/dist/scripts
-/htdocs/wp-content/themes/projectname-theme/dist/styles
-/htdocs/wp-content/uploads/
-```
-
-* `heroku login`
-* `heroku git:remote -a projectname-dev` add the heroku remote
-* `git push heroku master` commit your code to the repository and deploy it using git
-
-
-#### End
-* Access to your project online on [https://projectname.heroku.com](https://projectname.heroku.com)
-
-## Theme structure
+# Theme structure
 
 ```shell
 themes/your-theme-name/   # → Root of your Sage based theme
@@ -285,45 +209,16 @@ themes/your-theme-name/   # → Root of your Sage based theme
 └── vendor/               # → Composer packages (never edit)
 ```
 
-### Build commands
+# Most used commands
 
+### Docker
+* `sudo docker-compose up web`
+* `sudo docker-compose up adminer`
+* `sudo docker exec -it wpthemedeploy_web_1 /bin/bash`
+
+### Yarn
 * `yarn run start` — Compile assets when file changes are made, start Browsersync session
 * `yarn run build` — Compile and optimize the files in your assets directory
 * `yarn run build:production` — Compile assets for production
 
 
-## Project Structure
-```shell
-wp-theme-deploy              # → Root of the Project
-├── bin                      # →
-│   └── wp                   # →
-├── composer.json            # → Heroku Autoloading and Server config
-├── composer.lock            # → Composer lock file (never edit)
-├── config                   # →
-│   ├── env                  # →
-        ├── development.php  # → Development environment config
-        ├── local.php        # → Local environment config
-        ├── production.php   # → Production environment config
-        ├── qa.php           # → QA(Quality Assurance) environment config
-│   ├── nginx.conf           # → nginx server config
-│   └── wp-config.php        # → This file contains WordPress config and replaces the usual wp-config.php
-├── docker                   # → This folder will include db-data (database folder) and nginx logs
-├── docker-compose.yml       # → Local server docker services
-├── Dockerfile               # → Docker build images
-├── htdocs                   # → 
-│   ├── index.php            # → 
-│   ├── wp-config.php        # →
-│   ├── wp-content           # →
-│   └── wp-load.php          # →
-├── package.json             # → Heroku Javascript Dependencies
-├── phpcs.xml                # → PHP Codesniffer rules
-├── Procfile                 # →
-├── terraform.tf             # → Deployment infrastructure plan
-├── tools                    # →
-│   └── star_web.sh         # →
-```
-
-### Docker commands
-* `sudo docker-compose up web`
-* `sudo docker-compose up adminer`
-* `sudo docker exec -it wpthemedeploy_web_1 /bin/bash`
